@@ -32,7 +32,7 @@ function truck_signup()
     else
     {
         //proceed to sign up
-        var _url = "http://localhost:54248/FoodTruckServices/webresources/rest/add/truck?title="+title+"&email="+email+"&logo_img=&menu_img=&phone="+phone+"&username="+username+"&password="+password;
+        var _url = "http://localhost:8080/FoodTruckServices/webresources/rest/add/truck?title="+title+"&email="+email+"&phone="+phone+"&username="+username+"&password="+password;
         console.log(_url);
         $.ajax({
         type: "GET",
@@ -42,7 +42,15 @@ function truck_signup()
         jsonpCallback: 'callback',
         jsonp: 'callback',
         success: function (json) {
-            console.log(json);
+            var status = json[0].status;
+            if(status == "success")
+            {
+                
+            }
+            else if(status == "failed")
+            {
+                alert(json[0].message);
+            }
         },
         error: function(jqXHR, textStatus, errorThrown){ 
         
