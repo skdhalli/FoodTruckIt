@@ -10,7 +10,6 @@ function truck_signup()
     var title = $("#title").val();
     var phone = $("#phone").val();
     var email = $("#email").val();
-    var username = $("#username").val();
     var password = $("#password").val();
     var confirm_password = $("#confirm_password").val();
     if(password != confirm_password)
@@ -32,7 +31,7 @@ function truck_signup()
     else
     {
         //proceed to sign up
-        var _url = "http://localhost:8080/FoodTruckServices/webresources/rest/add/truck?title="+title+"&email="+email+"&phone="+phone+"&username="+username+"&password="+password;
+        var _url = "http://localhost:8080/FoodTruckServices/webresources/rest/add/truck?title="+title+"&email="+email+"&phone="+phone+"&password="+password;
         console.log(_url);
         $.ajax({
         type: "GET",
@@ -42,14 +41,15 @@ function truck_signup()
         jsonpCallback: 'callback',
         jsonp: 'callback',
         success: function (json) {
-            var status = json[0].status;
+            //console.log(json);
+            var status = json.Result[0].status;
             if(status == "success")
             {
-                
+                window.location.href = document.URL.replace("#truck_signup", "#truck_signin");
             }
             else if(status == "failed")
             {
-                alert(json[0].message);
+                alert(json.Result[0].message);
             }
         },
         error: function(jqXHR, textStatus, errorThrown){ 

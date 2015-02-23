@@ -33,7 +33,7 @@
         <div data-role="main" class="ui-content">
             <a href="#truck_signup" class="ui-btn">Sign Up</a>
             <br/>
-            <a>Already have an account? </a><a href="#">Sign In</a>
+            <a>Already have an account? </a><a href="#truck_signin">Sign In</a>
         </div>
         <div data-role="footer">
           <h1>Footer Text</h1>
@@ -50,8 +50,6 @@
         <input type="tel" name="phone" id="phone">
         <label for="email">E-mail:</label>
         <input type="email" name="email" id="email">
-        <label for="username">User name:</label>
-        <input type="text" name="username" id="username">
         <label for="password">Password (Minimum 8 characters):</label>
         <input type="password" name="password" id="password">
         <label for="confirm_password">Confirm Password:</label>
@@ -62,5 +60,35 @@
           <h1>Footer Text</h1>
         </div>
     </div>
+    
+    <div id="truck_signin" data-role="page">
+        <div data-role="header">
+          <h1>Hello Food truck</h1>
+        </div>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <a href="#" class="ui-btn" onclick="truck_signin()">Sign In</a>
+        <br/>
+        <div data-role="footer">
+          <h1>Footer Text</h1>
+        </div>
+    </div> 
+    
+    <div id="mainpage_foodtruck" data-role="page">
+        <div data-role="header">
+          <h1>Hello Food truck</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <a href="#truck_signup" class="ui-btn">Sign Up</a>
+            <br/>
+            <a>Already have an account? </a><a href="#">Sign In</a>
+        </div>
+        <div data-role="footer">
+          <h1>Footer Text</h1>
+        </div>
+    </div> 
 </body>
 </html>
